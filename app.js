@@ -18,18 +18,32 @@ let operator = document.getElementsByClassName("operator");
 for (let i = 0; i < operator.length; i++) {
     operator[i].addEventListener('click', function () {
 
-        //history.innerText = output.innerText + operator[i].innerText;
-        //output.innerText = "";
-
         if (this.id == "clear") { //operator er vitorer jei id ta click korbe = this
             output.innerText = "";
             history.innerText = "";
         }
 
-        if (this.id == "backspace") {
-            output.innerText = output.innerText.substring(0, output.innerText.length-1)
+        else if (this.id == "backspace") {
+            output.innerText = output.innerText.substring(0, output.innerText.length - 1);
         }
+        
+        else {
+            history.innerText = output.innerText + operator[i].innerText;
+            output.innerText = "";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     })
 }
-
